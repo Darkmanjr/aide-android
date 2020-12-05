@@ -1,4 +1,4 @@
 # aide-android
-Test project aide.
-aide for app-android.
-test project this.
+This is test project.
+I'm beginner github.
+Hi people world.
