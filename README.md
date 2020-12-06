@@ -1,6 +1,7 @@
 # aide-android
-This is test project.
+This is test my project.
+Project name's Github.
+App name "[GH]first",App version "Demo".
 I'm beginner github.
-Hi people world.
-I want study project.
-Thank youf for teach.
+Thank you
+
