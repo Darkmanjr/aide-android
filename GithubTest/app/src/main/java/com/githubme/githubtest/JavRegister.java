@@ -5,6 +5,7 @@ import android.widget.*;
 import android.view.View.*;
 import android.view.*;
 import android.text.*;
+import android.content.*;
 
 public class JavRegister extends Activity
 {
@@ -19,6 +20,8 @@ public class JavRegister extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
+		ActionBar bar = getActionBar();
+		bar.setDisplayHomeAsUpEnabled(true);
 		
 		dbLogin = new DatabaseLogin(this);
 		
@@ -89,4 +92,18 @@ public class JavRegister extends Activity
 			}
 		});
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch (item.getItemId())
+		{
+			case android.R.id.home:
+				Intent b = new Intent(JavRegister.this,JavLogin.class);
+				startActivity(b);
+				finish();
+				break;
+		}
+		return super.onOptionsItemSelected(item);
+	} 
 }

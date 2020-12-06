@@ -61,13 +61,13 @@ public class JavLogin extends Activity
 				}
 				if(!TextUtils.isEmpty(username) && TextUtils.isEmpty(password))
 				{
-					ePass.setError("Pls,input your Password");
+					ePass.setError("Input your Password");
 					ePass.requestFocus();
 					return;
 				}
 				if(TextUtils.isEmpty(username) && !TextUtils.isEmpty(password))
 				{
-					eUser.setError("Pls,input your Username");
+					eUser.setError("Input your Username");
 					eUser.requestFocus();
 					return;
 				}
@@ -87,7 +87,7 @@ public class JavLogin extends Activity
 					}
 					else
 					{
-						Toast.makeText(JavLogin.this,"Wrong!! Pls,Check your Username or Password again",Toast.LENGTH_SHORT).show();
+						Toast.makeText(JavLogin.this,"Wrong!!..Check your Username or Password again pls.",Toast.LENGTH_SHORT).show();
 					}
 				}
 			}

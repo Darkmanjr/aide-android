@@ -27,6 +27,18 @@ public class MainActivity extends Activity
 		switch (item.getItemId())
 		{
 			case R.id.item_about:
+				AlertDialog.Builder b = new AlertDialog.Builder(this);
+				b.setTitle("About App");
+				b.setMessage("\nProject name : Github\n\nApp name : [GH]first\n\nApp version : Demo");
+				b.setPositiveButton("Close",new DialogInterface.OnClickListener()
+				{
+					public void onClick(DialogInterface c,int i)
+					{
+						c.dismiss();
+					}
+				});
+				b.setCancelable(false);
+				b.show();
 				break;
 				
 			case R.id.item_logout:
@@ -34,9 +46,27 @@ public class MainActivity extends Activity
 				SharedPreferences.Editor e = sh.edit();
 				e.remove("passKey");
 				e.commit();
-				Intent out = new Intent(MainActivity.this,JavLogin.class);
-				startActivity(out);
-				finish();
+				AlertDialog.Builder a = new AlertDialog.Builder(this);
+				a.setMessage("Do you want logout?");
+				a.setNegativeButton("No",new DialogInterface.OnClickListener()
+				{
+					public void onClick(DialogInterface n,int i)
+					{
+						n.cancel();
+					}
+				});
+				
+				a.setPositiveButton("Yes",new DialogInterface.OnClickListener()
+				{
+					public void onClick(DialogInterface y,int i)
+					{
+						Intent out = new Intent(MainActivity.this,JavLogin.class);
+						startActivity(out);
+						finish();
+					}
+				});
+				a.setCancelable(false);
+				a.show();
 				break;
 		}
 		return super.onOptionsItemSelected(item);
