@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#C1FFCE"
+	android:padding="10dp">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Github Project"
+		android:layout_centerHorizontal="true"
+		android:textSize="30sp"
+		android:textColor="#FF0000"
+		android:textStyle="bold"
+		android:id="@+id/activityloginTextView1"/>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/activityloginTextView1"
+		android:id="@+id/activityloginLinearLayout1"
+		android:layout_marginTop="60dp">
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/edit_username"
+				android:paddingLeft="113dp"
+				android:textSize="20sp"
+				android:paddingTop="10dp"
+				android:paddingBottom="10dp"
+				android:textColor="#001EFF"
+				android:singleLine="true"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Username :"
+				android:textSize="20sp"
+				android:textColor="#FF0000"
+				android:textStyle="bold"
+				android:layout_marginLeft="4dp"
+				android:layout_marginTop="9dp"/>
+
+		</FrameLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/activityloginLinearLayout1"
+		android:id="@+id/activityloginLinearLayout2"
+		android:layout_marginTop="30dp">
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/edit_password"
+				android:paddingLeft="113dp"
+				android:textSize="20sp"
+				android:paddingTop="10dp"
+				android:paddingBottom="10dp"
+				android:textColor="#001EFF"
+				android:inputType="textPassword"
+				android:singleLine="true"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Password :"
+				android:textSize="20sp"
+				android:textColor="#FF0000"
+				android:textStyle="bold"
+				android:layout_marginLeft="4dp"
+				android:layout_marginTop="9dp"/>
+
+		</FrameLayout>
+
+	</LinearLayout>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="50dp"
+		android:text="LOGIN"
+		android:layout_below="@id/activityloginLinearLayout2"
+		android:id="@+id/button_login"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:background="#CECECE"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="30dp"/>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/button_login"
+		android:gravity="center"
+		android:layout_marginTop="40dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Register Account Click &gt;&gt;"
+			android:textSize="20sp"
+			android:textColor="#0012FF"
+			android:textStyle="bold"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="HERE !!"
+			android:id="@+id/text_register"
+			android:textSize="20sp"
+			android:textColor="#FF0000"
+			android:textStyle="bold"
+			android:layout_marginLeft="5dp"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
+
