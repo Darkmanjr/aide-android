@@ -10,6 +10,8 @@ import android.text.*;
 
 public class JavLogin extends Activity
 {
+	public static final String MyPREFS ="prefs";
+	
 	DatabaseLogin dbLogin;
 	private EditText eUser;
 	private EditText ePass;
@@ -24,8 +26,13 @@ public class JavLogin extends Activity
 		
 		dbLogin = new DatabaseLogin(this);
 		
+		SharedPreferences shPrefs = getSharedPreferences(MyPREFS,Context.MODE_PRIVATE);
+		SharedPreferences.Editor edt = shPrefs.edit();
 		eUser = (EditText) findViewById(R.id.edit_username);
+		eUser.setText(shPrefs.getString("userKey",eUser.toString()));
+		
 		ePass = (EditText) findViewById(R.id.edit_password);
+		ePass.requestFocus();
 		bLogin = (Button) findViewById(R.id.button_login);
 		tRegis = (TextView) findViewById(R.id.text_register);
 		
@@ -69,6 +76,11 @@ public class JavLogin extends Activity
 					boolean chkLogin = dbLogin.CheckLogin(username,password);
 					if(chkLogin == true)
 					{
+						SharedPreferences prefs = getSharedPreferences(MyPREFS,Context.MODE_PRIVATE);
+						SharedPreferences.Editor ed = prefs.edit();
+						ed.putString("userKey",username);
+						ed.putString("passKey",password);
+						ed.commit();
 						Intent i = new Intent(JavLogin.this,MainActivity.class);
 						startActivity(i);
 						finish();
@@ -80,5 +92,21 @@ public class JavLogin extends Activity
 				}
 			}
 		});
+	}
+
+	@Override
+	protected void onResume()
+	{
+		SharedPreferences shp = getSharedPreferences(MyPREFS,Context.MODE_PRIVATE);
+		SharedPreferences.Editor e = shp.edit();
+		if(shp.contains("userKey"))
+		{
+			if(shp.contains("passKey"))
+			{
+				Intent i = new Intent(this,MainActivity.class);
+				startActivity(i);
+			}
+		}
+		super.onResume();
 	} 
 }
